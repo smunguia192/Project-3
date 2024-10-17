@@ -3,29 +3,43 @@
 # Problem 1 (5 pts):
 Write a script (or Jupyter Notebook code block) that opens the file, uses a for loop to read through the file line by line and, after finishing reading through the file, reports the highest water level and the date and time that was observed.
 
-
-
-
+#
 file_path = 'CO-OPS__8729108__wl.csv'
+
+
 max_level = float('-inf') 
 max_date_time = ""
+
+
 with open(file_path, 'r') as file:
     for line in file:
+        
         parts = line.strip().split(',')
+
+      
         if len(parts) >= 2:
             date_time = parts[0]  
             level_str = parts[1]  
+
+          
             try:
                 level = float(level_str)
-            except ValueError:   
-                continue 
+            except ValueError:
+              
+                continue
+
+           
             if level > max_level:
                 max_level = level
                 max_date_time = date_time
+
+
 if max_date_time:
     print(f"The highest water level was {max_level} observed on {max_date_time}.")
 else:
     print("No valid water level data found.")
+
+
 
   #  Problem 2 (5 pts):
 Either in a new script or modifying the above script, calculate the lowest, highest and average water level observed during the time period. As above, print the date and time for the lowest and highest readings. 
