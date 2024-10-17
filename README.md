@@ -143,16 +143,19 @@ with open(file_path, 'r') as file:
             except ValueError:
                 print(f"Warning: Invalid water level data at {date_time}.")
                 continue
+                
             # 5.0
             if current_level > 5.0:
                 print(f"Warning: Water level over 5.0 units at {date_time}, current level: {current_level}.")
+                
             # previous water level
             if previous_level is not None:
                 rise = current_level - previous_level     
+                
                 # 0.25
                 if rise > 0.25:
                     print(f"Warning: Water level increased by more than 0.25 units at {date_time}, rise: {rise}.")
-            # Update the previous level and date/time for the next iteration
+            
             previous_level = current_level
             previous_date_time = date_time
 
