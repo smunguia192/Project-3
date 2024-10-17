@@ -4,6 +4,8 @@
 Write a script (or Jupyter Notebook code block) that opens the file, uses a for loop to read through the file line by line and, after finishing reading through the file, reports the highest water level and the date and time that was observed.
 
 
+
+
 file_path = 'CO-OPS__8729108__wl.csv'
 max_level = float('-inf') 
 max_date_time = ""
